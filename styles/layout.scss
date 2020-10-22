@@ -1,0 +1,62 @@
+@import "params";
+
+$indent-1: 8px;
+$indent-2: 14px;
+$bg-color-red: #FF4100;
+$bg-color-white:#FFF;
+ 
+ .red{
+   color: #FF4100
+ }
+
+ .white{
+   color: white;
+ }
+ 
+.sr__border {
+  height: 100%;
+  width: 100vw;
+  max-width: $max-width;
+  //position: fixed;
+  position: relative;
+  padding: 0;
+  bottom: 0;
+ // display: none;
+
+  &-1 {
+    top: $indent-1;
+    left: $indent-1;
+    right: $indent-1;
+    bottom: $indent-1;
+   // position: fixed;
+    margin: 8px;
+    border: 1px solid $bg-color;
+  }
+
+  &-2 {
+    top: $indent-2;
+    left: $indent-2;
+    right: $indent-2;
+    bottom: $indent-2;
+    //position: fixed;
+    margin: 6px;
+    border: 1px solid $bg-color;
+  }
+
+
+  &-bg {
+    position: fixed;
+    background-color: #FFF;
+    width: 100%;
+
+    &.header {
+      top: 0;
+      height: 14px;
+    }
+
+    &.footer {
+      bottom: 0;
+      height: 14px;
+    }
+  }
+}

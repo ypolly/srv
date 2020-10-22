@@ -1,0 +1,95 @@
+@import "params";
+
+.sr__content {
+  display: block;
+  margin: auto;
+  text-align: center;
+  margin-top: 182px;   
+  margin-bottom: 140px;
+
+   &-photoblock {
+     margin: auto;
+     padding-left: 37px;
+     max-width: 80vw;
+     overflow: hidden;
+ }
+  
+  &-photo {   
+      height: 374px;
+      width: 301px;
+      margin: auto;
+      background-size: cover;
+      background-position: center top;
+      margin-top: 15px;
+  
+      @media (max-width: 400px) {            
+          height: 285px;
+          width: 231px;
+      }
+      @media (max-width: 320px) {            
+        margin-left: 0;
+    }
+  }
+  .star{
+    display: inline-block;
+    width: 18px;
+  }
+
+  &-line {
+    border-top: 8px solid $bg-color;
+    margin: 0 14px;
+  }
+
+  &-text {
+    text-align: left;
+    line-height: 27.5px;
+    font-weight: 200;
+    margin: 0 14px;
+    margin-top: -3px;
+   
+    .marker {
+      font-weight: 700;
+      color: $text-marker;
+    }
+    .marker-first{
+     font-weight:800; 
+     letter-spacing: 0.02em;
+     font-kerning:none;
+     color: $text-marker;
+    }
+    .marker-first-se{
+      font-weight:800; 
+      letter-spacing: 0.02em;
+      font-kerning: auto;
+      color: $text-marker;
+      letter-spacing: 0.04em;
+    }
+
+    a {
+      &:link, &:visited, &:hover, &:active {
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: 700;
+        color: $text-marker;
+      }
+    }
+    
+    .right{
+        margin-right: -1px;
+
+      }
+    
+  }
+
+}
+.sverige{
+  position: absolute;
+  top: 7px;
+  letter-spacing: 0.35em;
+  font-size: 18px;
+  color: white;
+  background-color: #FF4100;
+  z-index: 100;
+  width: 150px;
+  text-align: center;
+}

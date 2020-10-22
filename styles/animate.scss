@@ -1,0 +1,82 @@
+#topMarker {
+  display: none !important;
+}
+
+// #bottomMarker {
+//   display: none;
+// }
+// .first,
+ .slide-out-button{
+   animation-fill-mode: forwards;
+   animation-name: slide-out-button;
+   animation-duration: 0.3s;
+   animation-timing-function: linear;
+ 
+ }
+ 
+ 
+ @keyframes slide-out-button {
+  0%   { transform: translateX(-50%); }
+  100%  { transform: translateX(-150%);}
+   
+ }
+
+ .slide-in-button{
+  animation-fill-mode: backwards;
+  animation-name: slide-in-button;
+  animation-duration: 0.3s;
+  animation-timing-function: linear;
+
+}
+
+
+@keyframes slide-in-button {
+  0%  { transform: translateX(-150%);}
+ 100%   { transform: translateX(-50%); } 
+}
+
+
+.slide-out{ 
+  animation-fill-mode: forwards;
+  animation-name: slide-out;
+  animation-duration: 0.3s;
+  animation-timing-function: linear;
+}
+
+@keyframes slide-out {
+  0%   {transform: translateX(50%); }
+  100%  { transform: translateX(-50%);}
+}
+
+.slide-in{ 
+  animation-fill-mode: backwards;
+  animation-name: slide-in;
+  animation-duration: 0.3s;
+  animation-timing-function: linear;
+}
+
+@keyframes slide-in {
+  0%  { transform: translateX(-50%); }
+  100%   {transform: translateX(50%);}  
+}
+
+.slide-out-border{ 
+  animation-name: slide-out-border;
+  animation-duration: 4s;
+}
+
+@keyframes slide-out-border{
+0% { border-left: 6px solid #FFF; border-bottom: 6px solid #FFF;}
+10% {border-left:none; border-bottom: none;}}
+
+.slide-in-border{ 
+  animation-name: slide-in-border;
+  animation-duration: 1.5s;
+  animation-fill-mode: backwards;
+}
+
+@keyframes slide-in-border{
+70% {border-left:none; border-bottom: none;}
+100% { border-left: 6px solid #FFF; border-bottom: 6px solid #FFF;}
+}
+

@@ -1,0 +1,84 @@
+@import "params";
+
+
+.sr__button {
+  font-family: $font-myriad-cond-family;
+  font-size: 21px;
+  font-weight: 700;
+  position: fixed;
+  width: 100vw;
+  max-width: 522px;
+
+  &-open{
+    cursor: pointer;
+  }
+
+  &.language {
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+
+  }
+
+  &.apply {
+    top: 192px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &.contact {
+    top: 272px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  &-bg {
+    width: 38px;
+    //max-height: 83px;
+    z-index: 999;
+    outline: 8px solid white;
+    border: 1px solid white;
+    float: right;
+
+    &.apply{
+      border-top: 0;
+      max-height: 73px;
+    }
+    &.contact{
+      border-top: 0;
+      max-height: 85px;
+    }
+
+   
+  }
+
+  &-block {
+    padding: 9px 6px;
+    height: 83px;
+    //display: inline-block;
+    margin: auto;
+    background-color: #FF4100;
+    color: #FFF;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+    writing-mode: tb-rl;
+    transform: rotate(-180deg);   
+    &.apply{
+     height: 73px;
+    }
+    &.contact{
+      height: 85px;
+     }
+  }
+  
+
+  
+  a {
+    text-decoration: none;
+    color: #FFF
+  }
+
+ 
+
+}

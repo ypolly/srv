@@ -1,0 +1,83 @@
+
+@import "./params";
+@import "./layout";
+@import "./header";
+@import "./language";
+@import "./footer";
+@import "./content";
+@import "./animate";
+@import "./bars";
+@import "./form";
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: $font-myriad-family;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  position: relative;
+  color: $text-primary;
+  -webkit-overflow-scrolling: touch;
+
+
+}
+
+.h-center {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.z-layer {
+  &__border {
+   // z-index: 13;
+   // pointer-events: none;
+  }
+
+  &__bg {
+    z-index: 12;
+  }
+
+  &__header {
+    z-index: 14;
+  }
+
+  &__content {
+    z-index: 9;
+  }
+
+  &__footer {
+    z-index: 14;
+    pointer-events: auto;
+  }
+
+  &__language {
+    z-index: 14;
+    pointer-events: auto;
+  }
+}
+
+.sr {
+  width: 100%;
+  margin: auto;
+  position: absolute;
+  overflow: visible;
+  overflow-x: hidden;
+  &__page {
+    display: block;
+    margin: auto;
+    max-width: $max-width;
+  }
+}
+
+.sverige{
+  position: absolute;
+  top: 7px;
+  letter-spacing: 0.35em;
+  font-size: 18px;
+  color: white;
+  background-color: #FF4100;
+  z-index: 100;
+  width: 150px;
+  text-align: center;
+}
