@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Link from 'next/Link'
-
+import numbers from '../data/numbers.json';
 
 
 export default function Se() {
@@ -166,18 +166,7 @@ export default function Se() {
                   <div className="bars">
                           <div className="bars__col block">
                               <div className="bars__bar legend__block">
-                                  <div className="bars__bar-cell">550</div>
-                                  <div className="bars__bar-cell">500</div>
-                                  <div className="bars__bar-cell">450</div>
-                                  <div className="bars__bar-cell">400</div>
-                                  <div className="bars__bar-cell">350</div>
-                                  <div className="bars__bar-cell">300</div>
-                                  <div className="bars__bar-cell">250</div>
-                                  <div className="bars__bar-cell">200</div>
-                                  <div className="bars__bar-cell">150</div>
-                                  <div className="bars__bar-cell">100</div>
-                                  <div className="bars__bar-cell">50</div>
-                                  <div className="bars__bar-cell">0</div>
+                                  {numbers.map(n=><div className="bars__bar-cell">{n}</div>)} 
                                   <div className="bars__bar-cell legend-first"></div>
                               </div>
                           </div>

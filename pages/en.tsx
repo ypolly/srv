@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Link from 'next/Link'
 import { useEffect, useState } from 'react';
 import Apply from './apply';
-
+import numbers from '../data/numbers.json';
 
 
 export default function Home() {
@@ -41,8 +41,6 @@ export default function Home() {
     ])
 
 
-
-
     return (
         <>
             <Head>
@@ -63,12 +61,6 @@ export default function Home() {
                 <Apply animationClass={animationCard} closeCard={closeCard} />
 
                 <div>
-                {/* <div style={{opacity:0.6,height: 0}}>
-                <object style={{ position: 'absolute',
-                left: 0,
-                top: 0,
-                zIndex: 18}} type="image/svg+xml"
-                        data="./images/homeLayout.svg"/></div> */}
                     <div className="sr__header z-layer__header">
                         <div className="sr__header-bg"></div>
 
@@ -114,15 +106,6 @@ export default function Home() {
                             </div>
                         </a>
                     </div>
-
-
-                    {/* <div className="sr__border-bg z-layer__bg header h-center"></div>
-                    <div id="borderLayout" className="sr__border z-layer__border h-center">
-                        <div className="sr__border-1"></div>
-                        <div className="sr__border-2"></div>
-                    </div>
-                    <div className="sr__border-bg z-layer__bg footer h-center"></div> */}
-
                <div id="borderLayout" className="sr__border z-layer__border h-center">
                         <div className="sr__border-1">
                         <div className="sr__border-2">
@@ -233,19 +216,7 @@ export default function Home() {
                                 <div className="bars">
                                     <div className="bars__col block">
                                         <div className="bars__bar legend__block">
-                                            <div className="bars__bar-cell">550</div>
-                                            <div className="bars__bar-cell">500</div>
-                                            <div className="bars__bar-cell">450</div>
-                                            <div className="bars__bar-cell">400</div>
-                                            <div className="bars__bar-cell">350</div>
-                                            <div className="bars__bar-cell">300</div>
-                                            <div className="bars__bar-cell">250</div>
-                                            <div className="bars__bar-cell">200</div>
-                                            <div className="bars__bar-cell">150</div>
-                                            <div className="bars__bar-cell">100</div>
-                                            <div className="bars__bar-cell">50</div>
-                                            <div className="bars__bar-cell">0</div>
-                                            <div className="bars__bar-cell legend-first"></div>
+                                            {numbers.map(n=><div className="bars__bar-cell">{n}</div>)}                                           
                                         </div>
                                     </div>
 
@@ -385,8 +356,6 @@ export default function Home() {
                      
                             </div>
                         </div>
-
-
                     </div>
                 </div>
             </div>

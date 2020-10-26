@@ -1,0 +1,107 @@
+{
+"years" : [
+    {
+        "value": "",
+        "label": ""
+    },
+    {
+        "value": "0",
+        "label": "0 Years"
+    },    
+    {
+        "value": "1",
+        "label": "1 Year"
+    },
+    {
+        "value": "2",
+        "label": "2 Years"
+    },    
+    {
+        "value": "3",
+        "label": "3 Years"
+    },
+    {
+        "value": "4",
+        "label": "4 Years"
+    },
+    {
+        "value": "5",
+        "label": "5 Years"
+    },
+    {
+        "value": "6",
+        "label": "6 Years"
+    },
+    {
+        "value": "7",
+        "label": "7 Years"
+    },
+    {
+        "value": "8",
+        "label": "8 Years"
+    },
+    {
+        "value": "9",
+        "label": "9 Years"
+    },
+    {
+        "value": "10",
+        "label": "More than 10 Years"
+    }
+],
+
+"months" : [
+    {
+        "value": "",
+        "label": ""
+    },
+    {
+        "value": "0",
+        "label": "0 Months"
+    },    
+    {
+        "value": "1",
+        "label": "1 Month"
+    },
+    {
+        "value": "2",
+        "label": "2 Months"
+    },    
+    {
+        "value": "3",
+        "label": "3 Months"
+    },
+    {
+        "value": "4",
+        "label": "4 Months"
+    },
+    {
+        "value": "5",
+        "label": "5 Months"
+    },
+    {
+        "value": "6",
+        "label": "6 Months"
+    },
+    {
+        "value": "7",
+        "label": "7 Months"
+    },
+    {
+        "value": "8",
+        "label": "8 Months"
+    },
+    {
+        "value": "9",
+        "label": "9 Months"
+    },
+    {
+        "value": "10",
+        "label": "10 Months"
+    },
+    {
+        "value": "11",
+        "label": "11 Months"
+    }
+]
+}
