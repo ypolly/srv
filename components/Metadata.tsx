@@ -1,6 +1,6 @@
 import Head from 'next/head';
 
-const header = () => {
+const metadata = () => {
     return(
     <Head>
         <meta charSet="UTF-8" />
@@ -15,4 +15,4 @@ const header = () => {
     )
 }
 
-export default header;
+export default metadata;
