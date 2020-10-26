@@ -209,6 +209,7 @@ export default function ControlledOpenSelect({ closeCard }) {
                   IconComponent={ArrowDown}
                   error={errors.nationality}
                 >
+                  <option aria-label="None" value="" />
                   {nationalities.map(n=><option value={n}>{n}</option>)}
                 </Select>
               }
@@ -277,6 +278,7 @@ export default function ControlledOpenSelect({ closeCard }) {
                       error={errors.residentInSwedenYears}
 
                     >
+                      <option aria-label="None" value="" />
                       {timestamps.years.map(y=><option value={y.value}>{y.label}</option>)}
                     </Select>
                   }
@@ -305,6 +307,7 @@ export default function ControlledOpenSelect({ closeCard }) {
                       error={errors.residentInSwedenMonths}
 
                     >
+                      <option aria-label="None" value="" />
                       {timestamps.months.map(m=><option value={m.value}>{m.label}</option>)}
                     </Select>
                   }
@@ -337,6 +340,7 @@ export default function ControlledOpenSelect({ closeCard }) {
                       error={errors.experienceYears}
 
                     >
+                      <option aria-label="None" value="" />
                      {timestamps.years.map(y=><option value={y.value}>{y.label}</option>)}
                     </Select>
                   }
@@ -365,6 +369,7 @@ export default function ControlledOpenSelect({ closeCard }) {
                       error={errors.experienceMonths}
 
                     >
+                      <option aria-label="None" value="" />
                      {timestamps.months.map(m=><option value={m.value}>{m.label}</option>)}
                     </Select>
                   }
@@ -453,6 +458,7 @@ export default function ControlledOpenSelect({ closeCard }) {
                   IconComponent={ArrowDown}
                   error={errors.swedishLanguageLevel}
                 >
+                  <option aria-label="None" value="" />
                   {languageLevel.map(l=><option value={l}>{l}</option>)}
                 </Select>
               }
@@ -478,6 +484,7 @@ export default function ControlledOpenSelect({ closeCard }) {
                   IconComponent={ArrowDown}
                   error={errors.englishLanguageLevel}
                 >
+                  <option aria-label="None" value="" />
                   {languageLevel.map(l=><option value={l}>{l}</option>)}
                 </Select>
               }

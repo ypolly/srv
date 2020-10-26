@@ -1,10 +1,6 @@
 {
 "years" : [
     {
-        "value": "",
-        "label": ""
-    },
-    {
         "value": "0",
         "label": "0 Years"
     },    
@@ -51,10 +47,6 @@
 ],
 
 "months" : [
-    {
-        "value": "",
-        "label": ""
-    },
     {
         "value": "0",
         "label": "0 Months"

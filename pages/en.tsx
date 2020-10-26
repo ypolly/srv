@@ -2,7 +2,9 @@ import Head from 'next/head'
 import Link from 'next/Link'
 import { useEffect, useState } from 'react';
 import Apply from './apply';
-import numbers from '../data/numbers.json';
+import salaryScale from '../data/salaryScale.json';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 
 export default function Home() {
@@ -43,24 +45,14 @@ export default function Home() {
 
     return (
         <>
-            <Head>
-                <meta charSet="UTF-8" />
-                <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
-                <meta name="mobile-web-app-capable" content="yes" />
-                <meta name="description" content="Elite home cleaning with Sweden's best paid home cleaners – 50% higher salary than in collective agreements. 480 kr/h. Open Mon-Sun 9-22, at 0770-16 16 16." />
-                <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
-                <title>Servia™ AB – The Best Paid Maid™</title>
-                <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon" />
-                <link rel="stylesheet" href="./fonts/fonts.css" />
-
-
-            </Head>
-            
+          <Header /> 
             <div className="sr">
                 
                 <Apply animationClass={animationCard} closeCard={closeCard} />
 
                 <div>
+
+
                     <div className="sr__header z-layer__header">
                         <div className="sr__header-bg"></div>
 
@@ -106,6 +98,9 @@ export default function Home() {
                             </div>
                         </a>
                     </div>
+
+                    
+                /*-- --*/
                <div id="borderLayout" className="sr__border z-layer__border h-center">
                         <div className="sr__border-1">
                         <div className="sr__border-2">
@@ -216,7 +211,7 @@ export default function Home() {
                                 <div className="bars">
                                     <div className="bars__col block">
                                         <div className="bars__bar legend__block">
-                                            {numbers.map(n=><div className="bars__bar-cell">{n}</div>)}                                           
+                                            {salaryScale.map(n=><div className="bars__bar-cell">{n}</div>)}                                           
                                         </div>
                                     </div>
 
@@ -348,19 +343,14 @@ export default function Home() {
                             </div>
                         </div>
                     </div>
+
+
+
                     </div></div></div>
-                    <div id="bottomMarker" className="sr__footer h-center z-layer__footer">
-                        <div className="sr__footer-bg">
-                            <div className="sr__footer-block">
-                                SERVIA AB • <a href="tel:0770-16 16 16">0770-16 16 16</a>
-                     
-                            </div>
-                        </div>
-                    </div>
+                    
+                    <Footer />
                 </div>
             </div>
-
-
         </>
     )
 }

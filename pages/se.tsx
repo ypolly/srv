@@ -1,23 +1,15 @@
 import Head from 'next/head'
 import Link from 'next/Link'
-import numbers from '../data/numbers.json';
+import salaryScale from '../data/salaryScale.json';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 
 export default function Se() {
   return (
     <>
-      <Head>
-      <meta charSet="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1"/>
-    <meta name="mobile-web-app-capable" content="yes"/>
-    <meta name="description" content="Elite home cleaning with Sweden's best paid home cleaners – 50% higher salary than in collective agreements. 480 kr/h. Open Mon-Sun 9-22, at 0770-16 16 16."/>
-    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-    <title>Servia™ AB – The Best Paid Maid™</title>
-    <link rel="shortcut icon"  href="./images/favicon.ico" type="image/x-icon"/>
-    <link rel="stylesheet"  href="./fonts/fonts.css"/>
-      </Head>
-    
-      <div className="sr">
+      <Header />
+          <div className="sr">
 
 
                 <div className="sr__header z-layer__header">
@@ -51,7 +43,7 @@ export default function Se() {
                  <a href="/">
                  <div className="sr__button-bg apply">
                        <div className="sr__button-block apply" style={{letterSpacing: '0.01em'}}>
-                          ANSÖK
+                          ENGLISH
                        </div>
                    </div>
                  </a>
@@ -166,7 +158,7 @@ export default function Se() {
                   <div className="bars">
                           <div className="bars__col block">
                               <div className="bars__bar legend__block">
-                                  {numbers.map(n=><div className="bars__bar-cell">{n}</div>)} 
+                                  {salaryScale.map(n=><div className="bars__bar-cell">{n}</div>)} 
                                   <div className="bars__bar-cell legend-first"></div>
                               </div>
                           </div>
@@ -298,15 +290,7 @@ export default function Se() {
           </div>
       </div>
   
-      <div id="bottomMarker" className="sr__footer h-center z-layer__footer">
-          <div className="sr__footer-bg">
-              <div className="sr__footer-block">
-                  SERVIA AB • <a href="tel:0770-16 16 16">0770-16 16 16</a>
-                  &nbsp;
-                  <a href="mailto:info@servia.com"><img src="./images/pencil.svg"/></a>
-              </div>
-          </div>
-      </div>
+      <Footer />
    </div>
   
  </>      
