@@ -1,7 +1,11 @@
 import ApplyForm from "../components/ApplyForm";
 import Borders from "../components/Borders";
 
-export default function Apply({ animationClass, closeCard }) {
+export default function Apply({ animationClass, closed, onChange }) {
+  function handleChange(event) {
+    onChange(event.target.value);
+  }
+
   return (
     <>
       <div
@@ -10,7 +14,7 @@ export default function Apply({ animationClass, closeCard }) {
         style={{ opacity: 1 }}
       >
         <Borders color="white">
-          <div onClick={closeCard} className="form__close">
+          <div onClick={handleChange} className="form__close">
             <object
               className="form__close-svg"
               type="image/svg+xml"
@@ -48,7 +52,7 @@ export default function Apply({ animationClass, closeCard }) {
               </p>
             </div>
             <div className="form__content">
-              <ApplyForm closeCard={closeCard} />
+              <ApplyForm closed={closed} onChange={onChange} />
             </div>
 
             <div className="copyright">

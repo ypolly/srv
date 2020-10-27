@@ -43,7 +43,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function ControlledOpenSelect({ closeCard }) {
+export default function ControlledOpenSelect({ closed, onChange }) {
   const classes = useStyles();
 
   const [showed, setShowed] = useState("false");
@@ -52,6 +52,10 @@ export default function ControlledOpenSelect({ closeCard }) {
     mode: "onSubmit",
     // resolver: yupResolver(schema),
   });
+
+  function handleChange(event) {
+    onChange(event.target.value);
+  }
 
   function scrollToTop() {
     // window.scrollTo({
@@ -696,7 +700,7 @@ export default function ControlledOpenSelect({ closeCard }) {
             </button>
           </div>
           <div className="form__botton-1">
-            <button onClick={() => closeCard()} className="clear">
+            <button onClick={handleChange} className="clear">
               CLOSE
             </button>
           </div>
