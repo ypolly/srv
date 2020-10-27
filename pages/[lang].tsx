@@ -5,7 +5,7 @@ import Link from "next/Link";
 
 import Metadata from "../components/Metadata";
 import Footer from "../components/Footer";
-import EnglishText from "../components/englishText";
+import EnglishText from "../components/EnglishText";
 import SwedishText from "../components/SwedishText";
 
 export default function Home() {
