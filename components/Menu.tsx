@@ -14,8 +14,6 @@ const menu = (props) => {
     slideOut: "slide-out",
   };
 
-  const currentLang = props.window.substr(props.window.lastIndexOf("/") + 1);
-
   // set default state to use fade in and visible class
   const [animationCard, setAnimationCard] = useState("");
   const [animationDiv, setAnimationDiv] = useState("");
@@ -39,7 +37,7 @@ const menu = (props) => {
         <div className="sr__header-bg"></div>
 
         <div className="sr__header-block" id="headerMarker">
-          <a href={"/" + currentLang} className="sr__header-logo">
+          <a href={"/" + props.lang} className="sr__header-logo">
             <object
               className="sr__header-logo_main"
               type="image/svg+xml"
@@ -58,11 +56,11 @@ const menu = (props) => {
         id="languageMarker"
         className="sr__button language z-layer__language"
       >
-        <Link href={"/" + currentLang}>
+        <Link href={"/" + props.lang}>
           <a>
             <div className="sr__button-bg">
               <div className="sr__button-block">
-                {currentLang === "se" ? "English" : "Svenska"}
+                {props.lang === "se" ? "English" : "Svenska"}
               </div>
             </div>
           </a>
@@ -85,7 +83,7 @@ const menu = (props) => {
               className="sr__button-block apply"
               style={{ letterSpacing: "0.01em" }}
             >
-              {currentLang === "se" ? "Tillämpa" : "Apply"}
+              {props.lang === "se" ? "Tillämpa" : "Apply"}
             </div>
           </div>
         </a>
@@ -107,7 +105,7 @@ const menu = (props) => {
               className="sr__button-block contact"
               style={{ letterSpacing: "0.01em" }}
             >
-              {currentLang === "se" ? "Kontakt" : "Contact"}
+              {props.lang === "se" ? "Kontakt" : "Contact"}
             </div>
           </div>
         </a>

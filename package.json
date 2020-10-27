@@ -23,6 +23,7 @@
     "react-dom": "16.13.1",
     "react-hook-form": "^6.9.1",
     "react-input-mask": "^2.0.4",
+    "react-no-ssr": "^1.1.0",
     "sass": "^1.26.11",
     "yup": "^0.29.3"
   },

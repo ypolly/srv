@@ -1,12 +1,19 @@
 import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 import Apply from "./apply";
-import Eng from "./en";
+
 import Metadata from "../components/Metadata";
 import Menu from "../components/Menu";
+import Footer from "../components/Footer";
+import EnglishText from "../components/englishText";
+import SwedishText from "../components/SwedishText";
 
 export default function Home() {
   const [closed, setClosed] = useState("");
   const [clear, setClear] = useState("");
+  const router = useRouter();
+
+  const { lang } = router.query;
 
   function closeCard() {
     setClosed("false");
@@ -41,8 +48,9 @@ export default function Home() {
       <div className="sr">
         <Apply animationClass={animationCard} closeCard={closeCard} />
         <div>
-          <Menu window={window.location.href} />
-          <Eng />
+          <Menu lang={lang} />
+          {lang === "en" ? <EnglishText /> : <SwedishText />}
+          <Footer />
         </div>
       </div>
     </>

@@ -1,6 +1,6 @@
 import salaryScale from "../data/salaryScale.json";
 
-export default function Se() {
+export default function Swedish() {
   return (
     <>
       <div id="borderLayout" className="sr__border z-layer__border h-center">
