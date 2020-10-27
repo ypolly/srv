@@ -3,7 +3,6 @@ import { ThemeProvider, makeStyles } from "@material-ui/styles";
 import { theme } from "./Theme";
 import Radio, { RadioProps } from "@material-ui/core/Radio";
 import InputLabel from "@material-ui/core/InputLabel";
-import option from "@material-ui/core/option";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
 import Input from "@material-ui/core/Input";
@@ -46,35 +45,48 @@ const useStyles = makeStyles((theme) => ({
 export default function ControlledOpenSelect({ closed, onChange }) {
   const classes = useStyles();
 
-  const [showed, setShowed] = useState("false");
-
-  const { register, errors, handleSubmit, reset, control, watch } = useForm({
-    mode: "onSubmit",
-    // resolver: yupResolver(schema),
+  let schema = yup.object().shape({
+    desiredPosition: yup.string().required(),
+    businessArea: yup.string().required(),
+    honorific: yup.string().required(),
+    firstName: yup.string().required().min(2),
+    familyName: yup.string().required().min(2),
+    personalNumber: yup.number().required(),
+    nationality: yup.string().required(),
+    privateMobile: yup.string().required(),
+    privateEmail: yup.string().email().required(),
+    residentInCity: yup.string().required(),
+    residentInSwedenYears: yup.string().required(),
+    residentInSwedenMonths: yup.string().required(),
+    experienceYears: yup.string().required(),
+    experienceMonths: yup.string().required(),
+    currentJobSituation: yup.string().required(),
+    educationLevel: yup.string().required(),
+    swedishLanguageLevel: yup.string().required(),
+    englishLanguageLevel: yup.string().required(),
+    hasDrivingLicense: yup.string().required(),
+    hasCar: yup.string().required(),
   });
 
-  function handleChange(event) {
-    onChange(event.target.value);
-  }
-
-  function scrollToTop() {
-    // window.scrollTo({
-    //   top: 0,
-    //   behavior: "smooth"
-    // });
-  }
+  const [showed, setShowed] = useState(false);
 
   const defaultValues = {
     activitiesbefore: "",
   };
-  const onSubmit = (data, e) => {
-    console.log(data, e), reset(defaultValues);
+  const { register, errors, handleSubmit, reset, control, watch } = useForm({
+    resolver: yupResolver(schema),
+  });
+
+  const onSubmit = (data) => {
+    // console.log(data, e), reset(defaultValues);
+    console.log("data---", data);
+    // scrollToTop();
   };
-  const onError = (errors, e) => console.log(errors, e);
+  console.log(watch("desiredPosition"));
 
   return (
     <ThemeProvider theme={theme}>
-      <form noValidate onSubmit={handleSubmit(onSubmit)}>
+      <form onSubmit={handleSubmit(onSubmit)}>
         <div style={{ width: "360px", margin: "auto" }}>
           <FormControl fullWidth>
             <InputLabel variant="filled" htmlFor="desiredPosition">
@@ -84,8 +96,7 @@ export default function ControlledOpenSelect({ closed, onChange }) {
               inputRef={register}
               value={"Servia® Home Cleaning Maid"}
               name="desiredPosition"
-              id="desiredPosition"
-              disableUnderline={true}
+              disableUnderline
               error={errors.desiredPosition}
               //endAdornment={ (!!errors.desiredPosition)   ?  <SvgIcon/> : <TickOff /> }
             />
@@ -133,7 +144,9 @@ export default function ControlledOpenSelect({ closed, onChange }) {
                 <Select
                   native
                   inputRef={register}
-                  //onChange={e => register({ name: 'honorific', value: e.target.value})}
+                  onChange={(e) =>
+                    register({ name: "honorific", value: e.target.value })
+                  }
                   id="honorific"
                   name="honorific"
                   defaultValue={""}
@@ -197,8 +210,8 @@ export default function ControlledOpenSelect({ closed, onChange }) {
                       inputRef={register}
                       id="personalNumber"
                       name="personalNumber"
+                      defaultValue={""}
                       disableUnderline={true}
-                      // defaultValue={''}
                       error={errors.personalNumber}
                     />
                   )}
@@ -216,7 +229,9 @@ export default function ControlledOpenSelect({ closed, onChange }) {
                 <Select
                   native
                   id="nationality"
-                  //onChange={e => register({ name: 'nationality', value: e.target.value})}
+                  onChange={(e) =>
+                    register({ name: "nationality", value: e.target.value })
+                  }
                   name="nationality"
                   defaultValue={""}
                   disableUnderline={true}
@@ -684,7 +699,7 @@ export default function ControlledOpenSelect({ closed, onChange }) {
           </div>
 
           <div className="form__botton">
-            <button type="submit" className="submit" onClick={scrollToTop}>
+            <button type="submit" className="submit">
               APPLY NOW
             </button>
           </div>
@@ -700,7 +715,7 @@ export default function ControlledOpenSelect({ closed, onChange }) {
             </button>
           </div>
           <div className="form__botton-1">
-            <button onClick={handleChange} className="clear">
+            <button onClick={() => setShowed(false)} className="clear">
               CLOSE
             </button>
           </div>
