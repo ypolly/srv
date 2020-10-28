@@ -10,7 +10,7 @@ export default function Apply({ animationClass, closed, onChange }) {
     <>
       <div
         id="sr__apply"
-        className={`form__border  h-form ${animationClass}`}
+        className={`form__border border__red  h-form ${animationClass}`}
         style={{ opacity: 1 }}
       >
         <Borders color="white">

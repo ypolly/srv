@@ -7,6 +7,7 @@ import Metadata from "../components/Metadata";
 import Footer from "../components/Footer";
 import EnglishText from "../components/EnglishText";
 import SwedishText from "../components/SwedishText";
+import ContactForm from "../components/ContactForm";
 
 export default function Home() {
   const [closed, setClosed] = useState("");
@@ -47,6 +48,11 @@ export default function Home() {
       <Metadata />
       <div className="sr">
         <Apply
+          animationClass={animationCard}
+          closed={closed}
+          onChange={closeCard}
+        />
+        <ContactForm
           animationClass={animationCard}
           closed={closed}
           onChange={closeCard}
