@@ -22,13 +22,13 @@ export default function English() {
                   <span className="marker-first">
                     WE NOW LAUNCH THE CLEANING COMPANY
                   </span>{" "}
-                  with
+                  with{" "}
                   <span className="marker">
                     Sweden's highest salary for home cleaning maids, Servia AB.
                   </span>{" "}
                   We do it simultaneously in the three largest cities in Sweden:{" "}
-                  <span className="marker">Stockholm, Göteborg,</span>
-                  and <span className="marker">Malmö.</span>
+                  <span className="marker">Stockholm, Göteborg,</span> and{" "}
+                  <span className="marker">Malmö.</span>
                 </p>
                 <p>
                   The salary we offer is a full{" "}
@@ -91,11 +91,11 @@ export default function English() {
 
                 <p>
                   And because we can run the business at what’s most likely the
-                  lowest premium in the industry
+                  lowest premium in the industry{" "}
                   <span className="marker">
-                    &mdash;45% of the salary as compared to Hemfrid's
-                    145%&mdash;
-                  </span>
+                    &mdash; 45% of the salary as compared to Hemfrid's 145%
+                    &mdash;
+                  </span>{" "}
                   the price to clients is not higher than at the big home
                   cleaning companies.
                 </p>
@@ -104,9 +104,8 @@ export default function English() {
 
                 <p>
                   The price for cleaning at Servia is always{" "}
-                  <span className="marker">480 kr/h</span>
-                  including VAT, or{" "}
-                  <span className="marker">240 kr/h after tax reduction,</span>
+                  <span className="marker">480 kr/h</span> including VAT, or{" "}
+                  <span className="marker">240 kr/h after tax reduction,</span>{" "}
                   regardless of where the clients live, or how frequently, how
                   long, and which weekdays clients book their cleaning.
                 </p>
@@ -219,10 +218,10 @@ export default function English() {
                 </div>
 
                 <p style={{ margin: 0 }}>
-                  If you’re currently working as a home cleaner&mdash;as an
+                  If you’re currently working as a home cleaner &mdash; as an
                   employee, or through your own individual enterprise with your
-                  own clients&mdash;and you receive exceptionally positive
-                  feedback from your clients, and you want to
+                  own clients &mdash; and you receive exceptionally positive
+                  feedback from your clients, and you want to{" "}
                   <span className="marker">
                     substantially increase your salary
                   </span>{" "}
@@ -233,7 +232,7 @@ export default function English() {
                 <p>
                   <span className="marker">
                     You can work as much or as little as you want,
-                  </span>
+                  </span>{" "}
                   and you can freely choose whether you want to be employed by
                   us, or work as a subcontractor through your own individual
                   enterprise or company, for 265 kr per hour plus VAT.
@@ -256,7 +255,7 @@ export default function English() {
 
                 <p>
                   To apply, <span className="marker">send your resume</span> to
-                  us at
+                  us at{" "}
                   <a href="mailto:thebestpaidmaid@servia.com">
                     thebestpaidmaid@servia.com,
                   </a>{" "}
@@ -276,7 +275,7 @@ export default function English() {
 
                 <p className="right">
                   If you read this as a potential client, and you'd like to know
-                  more about Servia, we invite you to call us at
+                  more about Servia, we invite you to call us at{" "}
                   <a href="tel:0770-16 16 16">0770-16 16 16 </a> during{" "}
                   <span className="marker">
                     any day, Monday to Sunday, at 9-22,

@@ -1,20 +1,22 @@
+import { useEffect, useState } from "react";
 import ApplyForm from "../components/ApplyForm";
 import Borders from "../components/Borders";
 
-export default function Apply({ animationClass, closed, onChange }) {
-  function handleChange(event) {
-    onChange(event.target.value);
-  }
+export default function Apply({ animate, open, onChange }) {
+  const onClose = () => {
+    onChange(false);
+  };
 
   return (
     <>
       <div
         id="sr__apply"
-        className={`form__border border__red  h-form ${animationClass}`}
-        style={{ opacity: 1 }}
+        className={`form__border border__red  initial_tab ${
+          animate ? (open ? "slide-out" : "slide-in") : ""
+        }`}
       >
         <Borders color="white">
-          <div onClick={handleChange} className="form__close">
+          <div onClick={onClose} className="form__close">
             <object
               className="form__close-svg"
               type="image/svg+xml"
@@ -52,7 +54,7 @@ export default function Apply({ animationClass, closed, onChange }) {
               </p>
             </div>
             <div className="form__content">
-              <ApplyForm closed={closed} onChange={onChange} />
+              <ApplyForm open={open} onChange={onChange} />
             </div>
 
             <div className="copyright">

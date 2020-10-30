@@ -9,54 +9,56 @@ import EnglishText from "../components/EnglishText";
 import SwedishText from "../components/SwedishText";
 import ContactForm from "../components/ContactForm";
 
+enum PAGE {
+  APPLY,
+  CONTACT,
+  MAIN,
+}
+
 export default function Home() {
-  const [closed, setClosed] = useState("");
+  const [activePage, setActivePage] = useState(PAGE.MAIN);
   const [clear, setClear] = useState("");
+  const [animate, setAnimate] = useState(false);
   const router = useRouter();
 
   const { lang } = router.query;
-
-  function closeCard() {
-    setClosed("false");
-  }
 
   const ANIMATION_CLASSES = {
     slideIn: "slide-in",
     slideOut: "slide-out",
   };
 
-  // set default state to use fade in and visible class
-  const [animationCard, setAnimationCard] = useState("");
   const [animationDiv, setAnimationDiv] = useState("");
   const [animationBorder, setAnimationBorder] = useState("");
   // this will run everytime isHidden changes
-  useEffect(() => {
-    if (closed === "true") {
-      // fade out then hide once animation finishes
-      setAnimationCard("slide-out");
+
+  const onPageClick = (page) => {
+    setAnimate(true);
+    if (page !== PAGE.MAIN) {
       setAnimationDiv("slide-out-button");
       setAnimationBorder("slide-out-border");
-    } else if (closed === "false") {
-      setAnimationCard("slide-in");
+    } else {
       setAnimationDiv("slide-in-button");
       setAnimationBorder("slide-in-border");
     }
-  }, [closed]);
+    setActivePage(page);
+  };
 
   return (
     <>
       <Metadata />
       <div className="sr">
         <Apply
-          animationClass={animationCard}
-          closed={closed}
-          onChange={closeCard}
+          animate={animate}
+          open={activePage === PAGE.APPLY}
+          onChange={() => onPageClick(PAGE.MAIN)}
         />
         <ContactForm
-          animationClass={animationCard}
-          closed={closed}
-          onChange={closeCard}
+          animate={animate}
+          open={activePage === PAGE.CONTACT}
+          onChange={() => onPageClick(PAGE.MAIN)}
         />
+
         <div>
           <div>
             <div className="sr__header z-layer__header">
@@ -99,9 +101,7 @@ export default function Home() {
             >
               <a className="sr__button-open">
                 <div
-                  onClick={() => {
-                    setClosed(closed === "true" ? "false" : "true");
-                  }}
+                  onClick={() => onPageClick(PAGE.APPLY)}
                   id="applyButton"
                   className={`sr__button-bg apply  ${animationBorder}`}
                 >
@@ -109,7 +109,7 @@ export default function Home() {
                     className="sr__button-block apply"
                     style={{ letterSpacing: "0.01em" }}
                   >
-                    {lang === "se" ? "Tillämpa" : "Apply"}
+                    {lang === "se" ? "Ansök" : "Apply"}
                   </div>
                 </div>
               </a>
@@ -121,9 +121,7 @@ export default function Home() {
             >
               <a className="sr__button-open">
                 <div
-                  onClick={() => {
-                    setClosed(closed === "true" ? "false" : "true");
-                  }}
+                  onClick={() => onPageClick(PAGE.CONTACT)}
                   id="applyButton"
                   className={`sr__button-bg contact  ${animationBorder}`}
                 >

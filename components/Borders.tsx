@@ -10,13 +10,12 @@ export default function Borders(props) {
         </div>
       </div>
       {/* <div id="bottomMarker" className="sr__footer h-center z-layer__footer">
-                        <div className="sr__footer-bg">
-                            <div className="sr__footer-block">
-                                SERVIA AB • <a href="tel:0770-16 16 16">0770-16 16 16</a>
-                     
-                            </div>
-                        </div>
-                        </div> */}
+        <div className="sr__footer-bg">
+          <div className="sr__footer-block">
+            SERVIA AB • <a href="tel:0770-16 16 16">0770-16 16 16</a>
+          </div>
+        </div>
+      </div> */}
     </>
   );
 }

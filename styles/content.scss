@@ -6,13 +6,56 @@
   align-items: center;
 }
 
+.red_dot_line {
+  display: flex;
+  justify-content: center;
+}
+
+h3::before {
+  content: "• • •";
+  color: red;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0 5px;
+}
+
+h3::after {
+  content: "• • •";
+  color: red;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0 5px;
+}
+
+.usual_font {
+  font-size: medium;
+  font-weight: 100;
+}
+
 .centered_content {
   text-align: center;
 }
 
+.shield_css {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.red_text_margin {
+  color: red;
+  font-size: medium;
+  margin-top: 40px;
+}
+
+.red_firsttext_margin {
+  color: red;
+  font-size: medium;
+  margin-top: 25px;
+}
+
 .red_text {
   color: red;
-  font-size: large;
+  font-size: medium;
 }
 
 .red_line_text::before {

@@ -42,7 +42,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function ControlledOpenSelect({ closed, onChange }) {
+export default function ControlledOpenSelect({ open, onChange }) {
   const classes = useStyles();
 
   let schema = yup.object().shape({
@@ -51,7 +51,7 @@ export default function ControlledOpenSelect({ closed, onChange }) {
     honorific: yup.string().required(),
     firstName: yup.string().required().min(2),
     familyName: yup.string().required().min(2),
-    personalNumber: yup.number().required(),
+    personalNumber: yup.string().required(),
     nationality: yup.string().required(),
     privateMobile: yup.string().required(),
     privateEmail: yup.string().email().required(),
@@ -68,14 +68,39 @@ export default function ControlledOpenSelect({ closed, onChange }) {
     hasCar: yup.string().required(),
   });
 
+  const onClose = () => {
+    onChange(false);
+  };
+
   const [showed, setShowed] = useState(false);
 
-  const defaultValues = {
-    activitiesbefore: "",
-  };
   const { register, errors, handleSubmit, reset, control, watch } = useForm({
     resolver: yupResolver(schema),
+    defaultValues: {
+      desiredPosition: "",
+      businessArea: "",
+      honorific: "",
+      firstName: "",
+      familyName: "",
+      personalNumber: "",
+      nationality: "",
+      privateMobile: "",
+      privateEmail: "",
+      residentInCity: "",
+      residentInSwedenYears: "",
+      residentInSwedenMonths: "",
+      experienceYears: "",
+      experienceMonths: "",
+      currentJobSituation: "",
+      educationLevel: "",
+      swedishLanguageLevel: "",
+      englishLanguageLevel: "",
+      hasDrivingLicense: "",
+      hasCar: "",
+    },
   });
+
+  console.log(errors);
 
   const onSubmit = (data) => {
     // console.log(data, e), reset(defaultValues);
@@ -203,20 +228,21 @@ export default function ControlledOpenSelect({ closed, onChange }) {
             <Controller
               name="personalNumber"
               control={control}
-              as={
-                <InputMask mask="99999999-9999" maskChar="_">
-                  {() => (
+              render={({ onChange, onBlur, value, name }) => (
+                <InputMask
+                  value={value}
+                  onChange={onChange}
+                  mask="99999999-9999"
+                >
+                  {(inputProps) => (
                     <Input
-                      inputRef={register}
-                      id="personalNumber"
-                      name="personalNumber"
-                      defaultValue={""}
+                      {...inputProps}
                       disableUnderline={true}
                       error={errors.personalNumber}
                     />
                   )}
                 </InputMask>
-              }
+              )}
             />
           </FormControl>
 
@@ -292,10 +318,9 @@ export default function ControlledOpenSelect({ closed, onChange }) {
               error={errors.residentInCity}
             />
           </FormControl>
-          <div className="form__input">
-            <p className="form__input-label">RESIDENT IN SWEDEN:</p>
-
-            <div className="form__input-field" style={{ marginRight: "10px" }}>
+          <p className="residentCss">RESIDENT IN SWEDEN:</p>
+          <div className="form__timestamps">
+            <div style={{ marginRight: "10px" }}>
               <FormControl fullWidth>
                 <InputLabel
                   disableAnimation={true}
@@ -335,50 +360,45 @@ export default function ControlledOpenSelect({ closed, onChange }) {
                 />
               </FormControl>
             </div>
-            <div className="form__input-field">
-              <FormControl fullWidth>
-                <InputLabel variant="filled" htmlFor="residentInSwedenMonths">
-                  MONTHS
-                </InputLabel>
+            <FormControl fullWidth>
+              <InputLabel variant="filled" htmlFor="residentInSwedenMonths">
+                MONTHS
+              </InputLabel>
 
-                <Controller
-                  as={
-                    <Select
-                      native
-                      inputRef={register}
-                      onChange={(e) =>
-                        register({
-                          name: "residentInSwedenMonths",
-                          value: e.target.value,
-                        })
-                      }
-                      id="residentInSwedenMonths"
-                      name="residentInSwedenMonths"
-                      defaultValue={""}
-                      disableUnderline={true}
-                      IconComponent={ArrowDown}
-                      error={errors.residentInSwedenMonths}
-                    >
-                      <option aria-label="None" value="" />
-                      {timestamps.months.map((m) => (
-                        <option value={m.value}>{m.label}</option>
-                      ))}
-                    </Select>
-                  }
-                  control={control}
-                  name="residentInSwedenMonths"
-                  id="residentInSwedenMonths"
-                  defaultValue={""}
-                />
-              </FormControl>
-            </div>
+              <Controller
+                as={
+                  <Select
+                    native
+                    inputRef={register}
+                    onChange={(e) =>
+                      register({
+                        name: "residentInSwedenMonths",
+                        value: e.target.value,
+                      })
+                    }
+                    id="residentInSwedenMonths"
+                    name="residentInSwedenMonths"
+                    defaultValue={""}
+                    disableUnderline={true}
+                    IconComponent={ArrowDown}
+                    error={errors.residentInSwedenMonths}
+                  >
+                    <option aria-label="None" value="" />
+                    {timestamps.months.map((m) => (
+                      <option value={m.value}>{m.label}</option>
+                    ))}
+                  </Select>
+                }
+                control={control}
+                name="residentInSwedenMonths"
+                id="residentInSwedenMonths"
+                defaultValue={""}
+              />
+            </FormControl>
           </div>
 
+          <p className="residentCss">PROF. CLEANING EXPERIENCE (FULL-TIME):</p>
           <div className="form__input">
-            <p className="form__input-label">
-              PROF. CLEANING EXPERIENCE (FULL-TIME):
-            </p>
-
             <div className="form__input-field" style={{ marginRight: "10px" }}>
               <FormControl fullWidth>
                 <InputLabel
@@ -715,7 +735,7 @@ export default function ControlledOpenSelect({ closed, onChange }) {
             </button>
           </div>
           <div className="form__botton-1">
-            <button onClick={() => setShowed(false)} className="clear">
+            <button onClick={onClose} className="clear">
               CLOSE
             </button>
           </div>

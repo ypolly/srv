@@ -278,10 +278,50 @@
   margin-bottom: 23px;
 }
 
-.copyright_redletters {
-  color: red;
+.copyright_greyletters {
+  color: grey;
+  margin-top: 50px;
 }
 
 .copyright_whiteletters {
   color: white;
+}
+
+.residentCss {
+  display: flex;
+  justify-content: space-evenly;
+  margin: auto;
+  font-size: 16px;
+  color: white;
+  margin-bottom: -38px;
+  margin-top: 15px;
+  background-color: #ff4100;
+  position: relative;
+  z-index: 10;
+  text-align: left;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  margin-left: 12px;
+  line-height: 24px;
+  max-width: fit-content;
+}
+
+.form__timestamps {
+  display: flex;
+  justify-content: space-evenly;
+  margin: auto;
+  &-label {
+    font-size: 16px;
+    color: white;
+    margin-bottom: -38px;
+    margin-top: 0;
+    background-color: #ff4100;
+    position: relative;
+    z-index: 10;
+    text-align: left;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    margin-left: 12px;
+    line-height: 24px;
+  }
 }
