@@ -1,55 +1,47 @@
 @import "params";
 
-
 .sr__button {
   font-family: $font-myriad-cond-family;
   font-size: 21px;
   font-weight: 700;
   position: fixed;
-  width: 100vw;
-  max-width: 522px;
+  right: 0;
 
-  &-open{
+  &-open {
     cursor: pointer;
   }
 
   &.language {
     top: 100px;
-    left: 50%;
-    transform: translateX(-50%);
-
   }
 
   &.apply {
     top: 192px;
-    left: 50%;
-    transform: translateX(-50%);
   }
 
   &.contact {
     top: 272px;
-    left: 50%;
-    transform: translateX(-50%);
   }
-  
+
+  &.main {
+    top: 352px;
+  }
+
   &-bg {
     width: 38px;
     //max-height: 83px;
     z-index: 999;
-    outline: 8px solid white;
     border: 1px solid white;
     float: right;
 
-    &.apply{
+    &.apply {
       border-top: 0;
       max-height: 73px;
     }
-    &.contact{
+    &.contact {
       border-top: 0;
       max-height: 85px;
     }
-
-   
   }
 
   &-block {
@@ -57,28 +49,59 @@
     height: 83px;
     //display: inline-block;
     margin: auto;
-    background-color: #FF4100;
-    color: #FFF;
+    background-color: #ff4100;
+    color: #fff;
     width: 100%;
     text-align: center;
     box-sizing: border-box;
     writing-mode: tb-rl;
-    transform: rotate(-180deg);   
-    &.apply{
-     height: 73px;
+    transform: rotate(-180deg);
+    &.apply {
+      height: 73px;
     }
-    &.contact{
+    &.contact {
       height: 85px;
-     }
+    }
   }
-  
+  &-bg2 {
+    width: 38px;
+    //max-height: 83px;
+    z-index: 999;
+    border: 1px solid red;
+    float: right;
 
-  
+    &.apply {
+      border-top: 0;
+      max-height: 73px;
+    }
+    &.contact {
+      border-top: 0;
+      max-height: 85px;
+    }
+  }
+
+  &-block2 {
+    padding: 9px 6px;
+    height: 83px;
+    //display: inline-block;
+    margin: auto;
+    background-color: white;
+    color: red;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+    writing-mode: tb-rl;
+    transform: rotate(-180deg);
+    &.apply {
+      height: 73px;
+    }
+    &.contact {
+      height: 85px;
+    }
+  }
+
   a {
     text-decoration: none;
-    color: #FFF
+    color: #fff;
   }
-
- 
-
 }

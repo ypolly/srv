@@ -1,5 +1,43 @@
 @import "params";
 
+// .headlineContactStyle::before {
+//   content: "";
+//   display: block;
+//   height: 1px;
+//   background: red;
+//   margin: 0 14px;
+//   flex-grow: 1;
+// }
+
+// .headlineContactStyle::after {
+//   content: "";
+//   display: block;
+//   height: 1px;
+//   background: red;
+//   margin: 0 14px;
+//   flex-grow: 1;
+// }
+
+h2 {
+  margin: 2px 0 2px 0;
+}
+
+.headlineContainerStyle {
+  border-top: 1px solid red;
+  border-bottom: 1px solid red;
+  margin: 25px 15px 0px 15px;
+}
+
+.headlineContactStyle {
+  text-align: center;
+  color: white;
+  font-size: medium;
+
+  background-color: red;
+  // margin: 25px 15px 0px 15px;
+  // padding-top: 4px;
+}
+
 .red_line_text {
   display: flex;
   justify-content: center;

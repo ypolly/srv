@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import Apply from "./apply";
+import ApplyForm from "../components/ApplyForm";
 import Link from "next/Link";
 
 import Metadata from "../components/Metadata";
 import Footer from "../components/Footer";
-import EnglishText from "../components/EnglishText";
-import SwedishText from "../components/SwedishText";
+import EnglishText from "../components/EnglishHome";
+import SwedishText from "../components/SwedishHome";
 import ContactForm from "../components/ContactForm";
 
 enum PAGE {
@@ -32,23 +32,23 @@ export default function Home() {
   const [animationBorder, setAnimationBorder] = useState("");
   // this will run everytime isHidden changes
 
-  const onPageClick = (page) => {
+  const onPageClick = (nextPage) => {
     setAnimate(true);
-    if (page !== PAGE.MAIN) {
+    setActivePage(nextPage);
+    if (nextPage !== PAGE.MAIN) {
       setAnimationDiv("slide-out-button");
       setAnimationBorder("slide-out-border");
     } else {
       setAnimationDiv("slide-in-button");
       setAnimationBorder("slide-in-border");
     }
-    setActivePage(page);
   };
 
   return (
     <>
       <Metadata />
       <div className="sr">
-        <Apply
+        <ApplyForm
           animate={animate}
           open={activePage === PAGE.APPLY}
           onChange={() => onPageClick(PAGE.MAIN)}
@@ -57,6 +57,7 @@ export default function Home() {
           animate={animate}
           open={activePage === PAGE.CONTACT}
           onChange={() => onPageClick(PAGE.MAIN)}
+          lang={lang}
         />
 
         <div>
@@ -86,54 +87,124 @@ export default function Home() {
             >
               <Link href={"/" + (lang === "se" ? "en" : "se")}>
                 <a>
-                  <div className="sr__button-bg">
-                    <div className="sr__button-block">
+                  <div
+                    className={`${
+                      activePage !== PAGE.APPLY
+                        ? "sr__button-bg"
+                        : "sr__button-bg2"
+                    }`}
+                  >
+                    <div
+                      className={`${
+                        activePage !== PAGE.APPLY
+                          ? "sr__button-block"
+                          : "sr__button-block2"
+                      }`}
+                    >
                       {lang === "se" ? "English" : "Svenska"}
                     </div>
                   </div>
                 </a>
               </Link>
             </div>
-
-            <div
-              id="languageMarker"
-              className={`sr__button apply z-layer__language ${animationDiv}`}
-            >
-              <a className="sr__button-open">
-                <div
-                  onClick={() => onPageClick(PAGE.APPLY)}
-                  id="applyButton"
-                  className={`sr__button-bg apply  ${animationBorder}`}
-                >
+            {activePage === PAGE.APPLY ? (
+              <div
+                id="languageMarker"
+                className={`sr__button apply  z-layer__language `}
+              >
+                <a className="sr__button-open">
                   <div
-                    className="sr__button-block apply"
-                    style={{ letterSpacing: "0.01em" }}
+                    onClick={() => onPageClick(PAGE.CONTACT)}
+                    id="applyButton"
+                    className={`${
+                      activePage !== PAGE.APPLY
+                        ? "sr__button-bg"
+                        : "sr__button-bg2"
+                    } apply  `}
                   >
-                    {lang === "se" ? "Ansök" : "Apply"}
+                    <div
+                      className={`${
+                        activePage !== PAGE.APPLY
+                          ? "sr__button-block"
+                          : "sr__button-block2"
+                      } apply`}
+                      style={{ letterSpacing: "0.01em" }}
+                    >
+                      {lang === "se" ? "Kontakt" : "Contact"}
+                    </div>
                   </div>
-                </div>
-              </a>
-            </div>
-
-            <div
-              id="languageMarker"
-              className={`sr__button contact  z-layer__language ${animationDiv}`}
-            >
-              <a className="sr__button-open">
-                <div
-                  onClick={() => onPageClick(PAGE.CONTACT)}
-                  id="applyButton"
-                  className={`sr__button-bg contact  ${animationBorder}`}
-                >
+                </a>
+              </div>
+            ) : (
+              <div
+                id="languageMarker"
+                className={`sr__button apply z-layer__language`}
+              >
+                <a className="sr__button-open">
                   <div
-                    className="sr__button-block contact"
-                    style={{ letterSpacing: "0.01em" }}
+                    onClick={() => onPageClick(PAGE.APPLY)}
+                    id="applyButton"
+                    className={`sr__button-bg apply `}
                   >
-                    {lang === "se" ? "Kontakt" : "Contact"}
+                    <div
+                      className="sr__button-block apply"
+                      style={{ letterSpacing: "0.01em" }}
+                    >
+                      {lang === "se" ? "Ansök" : "Apply"}
+                    </div>
                   </div>
-                </div>
-              </a>
-            </div>
+                </a>
+              </div>
+            )}
+            {activePage === PAGE.MAIN ? (
+              <div
+                id="languageMarker"
+                className={`sr__button contact  z-layer__language `}
+              >
+                <a className="sr__button-open">
+                  <div
+                    onClick={() => onPageClick(PAGE.CONTACT)}
+                    id="applyButton"
+                    className={`sr__button-bg contact  `}
+                  >
+                    <div
+                      className={`sr__button-block contact`}
+                      style={{ letterSpacing: "0.01em" }}
+                    >
+                      {lang === "se" ? "Kontakt" : "Contact"}
+                    </div>
+                  </div>
+                </a>
+              </div>
+            ) : (
+              <div
+                id="languageMarker"
+                className={`sr__button contact z-layer__language `}
+              >
+                <a className="sr__button-open">
+                  <div
+                    onClick={() => onPageClick(PAGE.MAIN)}
+                    id="applyButton"
+                    className={`${
+                      activePage !== PAGE.APPLY
+                        ? "sr__button-bg"
+                        : "sr__button-bg2"
+                    } contact  `}
+                  >
+                    <div
+                      className={`${
+                        activePage !== PAGE.APPLY
+                          ? "sr__button-block"
+                          : "sr__button-block2"
+                      } contact`}
+                      style={{ letterSpacing: "0.01em" }}
+                    >
+                      {lang === "se" ? "Hem" : "Home"}
+                    </div>
+                  </div>
+                </a>
+              </div>
+            )}
           </div>
           {lang === "en" ? <EnglishText /> : <SwedishText />}
           <Footer />

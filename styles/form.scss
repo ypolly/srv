@@ -11,6 +11,11 @@
   top: 0;
   transform: translateX(50%);
 }
+.centerContainer {
+  display: flex !important;
+  justify-content: center;
+  margin-bottom: 14px;
+}
 
 .form__content {
   display: block;
@@ -251,7 +256,7 @@
 .form__radio {
   width: 360px;
   margin: auto;
-  height: 86px;
+  // height: 86px;
   margin-top: 0;
   text-align: left;
   &-label {
@@ -293,7 +298,7 @@
   margin: auto;
   font-size: 16px;
   color: white;
-  margin-bottom: -38px;
+  // margin-bottom: -38px;
   margin-top: 15px;
   background-color: #ff4100;
   position: relative;
@@ -301,14 +306,14 @@
   text-align: left;
   font-weight: 700;
   letter-spacing: 0.03em;
-  margin-left: 12px;
+  margin-left: 5px;
   line-height: 24px;
   max-width: fit-content;
 }
 
 .form__timestamps {
   display: flex;
-  justify-content: space-evenly;
+  // justify-content: space-evenly;
   margin: auto;
   &-label {
     font-size: 16px;
