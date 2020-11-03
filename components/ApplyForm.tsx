@@ -85,7 +85,7 @@ export default function ControlledOpenSelect({ animate, open, onChange }) {
     formState,
   } = useForm({
     shouldUnregister: false,
-    // resolver: yupResolver(schema),
+    resolver: yupResolver(schema),
     defaultValues: {
       desiredPosition: "",
       businessArea: "",
