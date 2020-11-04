@@ -1,48 +1,80 @@
 import Shield from "../public/images/shield.svg";
+import { useTranslations } from "../shared/translations";
 
 export default function Swedish() {
+  const translation = useTranslations();
+
   return (
     <>
       <div className={`headlineContainerStyle`}>
-        <h2 className={`headlineContactStyle`}>BUSINESS</h2>
+        <h2 className={`headlineContactStyle`}>{translation.get("busines")}</h2>
       </div>
       <div className="sr__content-text">
         <div className="centered_content">
           <p>
-            Servia AB offers{" "}
-            <span className={`marker-first-se`}>home cleaning</span> with{" "}
-            <span className="marker">
-              Sweden's best paid home cleaning maids,
+            {` ${translation.get("serviaab")} `}
+            <span className={`marker-first-se`}>
+              {translation.get("homecleaning")}
             </span>{" "}
-            in <span className="marker">Stockholm, Gothenburg </span>och{" "}
-            <span className="marker">Malmö.</span> for the price of{" "}
-            <span className="marker">480 kr/h </span> incl. VAT before tax
-            reduction.{" "}
+            {` ${translation.get("with")} `}
+            <span className="marker">{translation.get("swedens")}</span> in{" "}
+            <span className="marker">{translation.get("twoCities")} </span>
+            {` ${translation.get("and")} `}
+            <span className="marker">{translation.get("Malmö")} </span>
+            {` ${translation.get("priceof")} `}
+            <span className="marker">{translation.get("480")} </span>{" "}
+            {translation.get("reduction")}
           </p>
         </div>
       </div>
       <div className={`headlineContainerStyle`}>
-        <h2 className={`headlineContactStyle`}>CUSTOMER SUPPORT</h2>
+        <h2 className={`headlineContactStyle`}>
+          {translation.get("customer")}
+        </h2>
       </div>
-      <h1 className={`centered_content red_text`}>PHONE</h1>
+      <h1 className={`centered_content red_text`}>
+        {translation.get("phone")}
+      </h1>
       <h1 className={`centered_content usual_font`}>0770-16 16 16</h1>
-      <h1 className={`centered_content red_text_margin`}>EMAIL</h1>
+      <h1 className={`centered_content red_text_margin`}>
+        {translation.get("email")}
+      </h1>
       <h1 className={`centered_content usual_font`}>info@servia.com</h1>
-      <h1 className={`centered_content red_text_margin`}>WEBSITE</h1>
+      <h1 className={`centered_content red_text_margin`}>
+        {translation.get("website")}
+      </h1>
       <h1 className={`centered_content usual_font`}>servia.com</h1>
       <div>
-        <h1 className={`centered_content red_text_margin`}>OPENING HOURS</h1>
-        <h1 className={`centered_content usual_font`}>Monday: 9:00-22:00</h1>
-        <h1 className={`centered_content usual_font`}>Tuesday: 9:00-22:00</h1>
-        <h1 className={`centered_content usual_font`}>Wednesday: 9:00-22:00</h1>
-        <h1 className={`centered_content usual_font`}>Thursday: 9:00-22:00</h1>
-        <h1 className={`centered_content usual_font`}>Friday: 9:00-22:00</h1>
-        <h1 className={`centered_content usual_font`}>Saturday: 9:00-22:00</h1>
-        <h1 className={`centered_content usual_font`}>Sunday: 9:00-22:00</h1>
+        <h1 className={`centered_content red_text_margin`}>
+          {translation.get("opening")}
+        </h1>
+        <h1 className={`centered_content usual_font`}>
+          {`${translation.get("monday")} `} 9:00-22:00
+        </h1>
+        <h1 className={`centered_content usual_font`}>
+          {`${translation.get("tuesday")} `} 9:00-22:00
+        </h1>
+        <h1 className={`centered_content usual_font`}>
+          {`${translation.get("wednesday")} `} 9:00-22:00
+        </h1>
+        <h1 className={`centered_content usual_font`}>
+          {`${translation.get("thursday")} `} 9:00-22:00
+        </h1>
+        <h1 className={`centered_content usual_font`}>
+          {`${translation.get("friday")} `} 9:00-22:00
+        </h1>
+        <h1 className={`centered_content usual_font`}>
+          {`${translation.get("saturday")} `} 9:00-22:00
+        </h1>
+        <h1 className={`centered_content usual_font`}>
+          {`${translation.get("sunday")} `} 9:00-22:00
+        </h1>
       </div>
 
       <div className={`headlineContainerStyle`}>
-        <h2 className={`headlineContactStyle`}>LOCATIONS</h2>
+        <h2 className={`headlineContactStyle`}>
+          {translation.get("locations")}
+        </h2>
       </div>
       <h1 className={`centered_content red_firsttext_margin`}>
         SERVIA&reg; AB STOCKHOLM
@@ -63,19 +95,23 @@ export default function Swedish() {
       <h1 className={`centered_content usual_font`}>121 34 Malmö</h1>
 
       <div className={`headlineContainerStyle`}>
-        <h2 className={`headlineContactStyle`}>COMPANY</h2>
+        <h2 className={`headlineContactStyle`}>{translation.get("compan")}</h2>
       </div>
-      <h1 className={`centered_content red_firsttext_margin`}>COMPANY NAME</h1>
+      <h1 className={`centered_content red_firsttext_margin`}>
+        {translation.get("companyname")}
+      </h1>
       <h1 className={`centered_content usual_font`}>Servia AB</h1>
 
       <h1 className={`centered_content red_text_margin`}>
-        REGISTRATION NUMBER
+        {translation.get("regnumber")}
       </h1>
       <h1 className={`centered_content usual_font`}>556902-7013</h1>
       <h1 className={`centered_content red_text_margin`}>
-        COUNTRY OF REGISTRATION
+        {translation.get("country")}
       </h1>
-      <h1 className={`centered_content usual_font`}>Sweden</h1>
+      <h1 className={`centered_content usual_font`}>
+        {translation.get("swe")}
+      </h1>
       <div className={`shield_css`}>
         <Shield />
       </div>
@@ -93,7 +129,8 @@ export default function Swedish() {
       >
         <div className="sr__footer-bg">
           <div className="sr__footer-block">
-            OPEN NOW • <a href="tel:0770-16 16 16">CLICK TO CALL</a>
+            {translation.get("open")} •{" "}
+            <a href="tel:0770-16 16 16">{translation.get("open")}</a>
             &nbsp;
             <a href="mailto:info@servia.com">
               <img src="./images/pencil.svg" />
