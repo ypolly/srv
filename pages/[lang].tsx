@@ -5,9 +5,8 @@ import Link from "next/Link";
 
 import Metadata from "../components/Metadata";
 import Footer from "../components/Footer";
-import EnglishText from "../components/EnglishHome";
-import SwedishText from "../components/SwedishHome";
 import ContactForm from "../components/ContactForm";
+import { Home } from "../components/Home";
 
 enum PAGE {
   APPLY,
@@ -15,33 +14,16 @@ enum PAGE {
   MAIN,
 }
 
-export default function Home() {
+export default function () {
   const [activePage, setActivePage] = useState(PAGE.MAIN);
-  const [clear, setClear] = useState("");
   const [animate, setAnimate] = useState(false);
-  const router = useRouter();
-
-  const { lang } = router.query;
-
-  const ANIMATION_CLASSES = {
-    slideIn: "slide-in",
-    slideOut: "slide-out",
-  };
-
-  const [animationDiv, setAnimationDiv] = useState("");
-  const [animationBorder, setAnimationBorder] = useState("");
-  // this will run everytime isHidden changes
+  const {
+    query: { lang },
+  } = useRouter();
 
   const onPageClick = (nextPage) => {
     setAnimate(true);
     setActivePage(nextPage);
-    if (nextPage !== PAGE.MAIN) {
-      setAnimationDiv("slide-out-button");
-      setAnimationBorder("slide-out-border");
-    } else {
-      setAnimationDiv("slide-in-button");
-      setAnimationBorder("slide-in-border");
-    }
   };
 
   return (
@@ -59,7 +41,6 @@ export default function Home() {
           onChange={() => onPageClick(PAGE.MAIN)}
           lang={lang}
         />
-
         <div>
           <div>
             <div className="sr__header z-layer__header">
@@ -206,7 +187,7 @@ export default function Home() {
               </div>
             )}
           </div>
-          {lang === "en" ? <EnglishText /> : <SwedishText />}
+          <Home />
           <Footer />
         </div>
       </div>

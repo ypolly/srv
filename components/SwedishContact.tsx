@@ -85,6 +85,21 @@ export default function Swedish() {
         <br />
         ARE TRADEMARKS WITH PENDING REGISTRATIONS.
       </div>
+      <div
+        id="bottomMarker"
+        className="sr__footer h-center z-layer__footer"
+        style={{ position: "relative", width: "fit-content" }}
+      >
+        <div className="sr__footer-bg">
+          <div className="sr__footer-block">
+            RING KUNDTJÄNST • <a href="tel:0770-16 16 16">ÖPPET NU</a>
+            &nbsp;
+            <a href="mailto:info@servia.com">
+              <img src="./images/pencil.svg" />
+            </a>
+          </div>
+        </div>
+      </div>
     </>
   );
 }
