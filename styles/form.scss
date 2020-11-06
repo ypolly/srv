@@ -3,7 +3,6 @@
   left: 50%;
   width: 100vw;
   max-width: 522px;
-  //height: 1582px;
   padding: 0;
   bottom: 0;
   position: absolute;
@@ -11,6 +10,35 @@
   top: 0;
   transform: translateX(50%);
 }
+
+.scrollButton {
+  position: absolute;
+  right: 40px;
+  bottom: 100px;
+  z-index: 14;
+}
+
+.buttonsContainer {
+  display: flex;
+  top: 100px;
+  position: fixed;
+  right: 0px;
+  flex-direction: column;
+  z-index: 1001;
+}
+
+.buttonsContainerWeb {
+  z-index: 1000;
+  width: 1000px;
+  height: 1100px;
+  display: flex;
+  top: 10px;
+  position: absolute;
+  right: 100px;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
 .centerContainer {
   display: flex !important;
   justify-content: center;
@@ -209,8 +237,6 @@
   input[type="radio"] + label {
     background-color: #ffffff;
     border: 6px solid #ff4100;
-    //border: 2px solid #FFFFFF;
-    //outline: 2px solid #000000;
     height: 36px;
     width: 36px;
     display: inline-block;
@@ -256,7 +282,6 @@
 .form__radio {
   width: 360px;
   margin: auto;
-  // height: 86px;
   margin-top: 0;
   text-align: left;
   &-label {
@@ -298,7 +323,6 @@
   margin: auto;
   font-size: 16px;
   color: white;
-  // margin-bottom: -38px;
   margin-top: 15px;
   background-color: #ff4100;
   position: relative;
@@ -313,7 +337,6 @@
 
 .form__timestamps {
   display: flex;
-  // justify-content: space-evenly;
   margin: auto;
   &-label {
     font-size: 16px;

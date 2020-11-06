@@ -15,7 +15,7 @@ $z-index-base: 999;
 
     .sr__footer-bg {
       min-width: 185px;
-      background-color: #FFF;
+      background-color: #fff;
     }
   }
 
@@ -24,16 +24,13 @@ $z-index-base: 999;
     height: 38px;
     z-index: 999;
     border: 1px solid white;
-    // border-left: 6px solid #FFF;
-    // border-right: 6px solid #FFF;
-    // border-top: 6px solid #FFF;
   }
 
   &-block {
     display: inline-block;
     margin: auto;
-    background-color: #FF4100;
-    color: #FFF;
+    background-color: #ff4100;
+    color: #fff;
     width: 100%;
     box-sizing: border-box;
     white-space: nowrap;
@@ -41,12 +38,11 @@ $z-index-base: 999;
     padding-top: 10px;
     padding-bottom: 8px;
     text-align: center;
-    //padding-left: 12px
   }
 
   a {
     text-decoration: none;
-    color: #FFF
+    color: #fff;
   }
 
   img {
@@ -54,7 +50,7 @@ $z-index-base: 999;
     margin-bottom: -1px;
   }
 
-  .pen{
+  .pen {
     display: inline-block;
   }
 }

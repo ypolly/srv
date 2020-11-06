@@ -82,7 +82,7 @@ export const Home = () => {
                   {` ${translation.get("clients")} `}
                 </p>
 
-                <p>${translation.get("contrary")}</p>
+                <p>{translation.get("contrary")}</p>
 
                 <p>
                   {`${translation.get("always")} `}

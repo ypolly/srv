@@ -1,0 +1,49 @@
+.web__button {
+  font-family: $font-myriad-cond-family;
+  font-size: 21px;
+  font-weight: 700;
+  right: 0;
+
+  &-open {
+    cursor: pointer;
+  }
+
+  &-bg {
+    z-index: 999;
+    border: 1px solid white;
+    float: right;
+  }
+
+  &-block {
+    padding: 9px 6px;
+    height: 83px;
+    margin: auto;
+    background-color: #ff4100;
+    color: #fff;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+    writing-mode: tb-rl;
+  }
+  &-bg2 {
+    z-index: 999;
+    border: 1px solid red;
+    float: right;
+  }
+
+  &-block2 {
+    padding: 9px 6px;
+    margin: auto;
+    background-color: white;
+    color: red;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+    writing-mode: tb-rl;
+  }
+
+  a {
+    text-decoration: none;
+    color: #fff;
+  }
+}

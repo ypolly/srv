@@ -17,7 +17,8 @@ export default function Swedish() {
               {translation.get("homecleaning")}
             </span>{" "}
             {` ${translation.get("with")} `}
-            <span className="marker">{translation.get("swedens")}</span> in{" "}
+            <span className="marker">{translation.get("swedens")}</span>{" "}
+            {`${translation.get("in")} `}
             <span className="marker">{translation.get("twoCities")} </span>
             {` ${translation.get("and")} `}
             <span className="marker">{translation.get("Malmö")} </span>
@@ -130,7 +131,7 @@ export default function Swedish() {
         <div className="sr__footer-bg">
           <div className="sr__footer-block">
             {translation.get("open")} •{" "}
-            <a href="tel:0770-16 16 16">{translation.get("open")}</a>
+            <a href="tel:0770-16 16 16">{translation.get("click")}</a>
             &nbsp;
             <a href="mailto:info@servia.com">
               <img src="./images/pencil.svg" />

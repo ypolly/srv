@@ -1,27 +1,20 @@
 import { ThemeProvider, makeStyles } from "@material-ui/styles";
 
 import { theme } from "./Theme";
-import Radio, { RadioProps } from "@material-ui/core/Radio";
 import InputLabel from "@material-ui/core/InputLabel";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
 import Input from "@material-ui/core/Input";
 import SvgIcon from "@material-ui/core/SvgIcon";
 import Arrow from "../public/images/arrow.svg";
-import Send from "../public/images/send.svg";
 import Tick from "../public/images/tickoff.svg";
 import { useForm, Controller } from "react-hook-form";
-import Checkbox from "@material-ui/core/Checkbox";
-import FormGroup from "@material-ui/core/FormGroup";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
-import FormLabel from "@material-ui/core/FormLabel";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import Borders from "../components/Borders";
 
 import { useRef, useState } from "react";
 import InputMask from "react-input-mask";
-import classes from "*.module.css";
 import nationalities from "../data/nationalities.json";
 import timestamps from "../data/timestamps.json";
 import languageLevel from "../data/languageLevel.json";
@@ -117,7 +110,6 @@ export default function ControlledOpenSelect({ animate, open, onChange }) {
   console.log("----");
 
   const onSubmit = (data) => {
-    // console.log(data, e), reset(defaultValues);
     console.log("data---", data);
     // scrollToTop();
   };

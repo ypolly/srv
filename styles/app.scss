@@ -1,7 +1,8 @@
 @import "./params";
 @import "./layout";
 @import "./header";
-@import "./language";
+@import "./buttonsMobile";
+@import "./buttonsWeb";
 @import "./footer";
 @import "./content";
 @import "./animate";
@@ -28,7 +29,6 @@ body {
 .z-layer {
   &__border {
     z-index: 13;
-    // pointer-events: none;
   }
 
   &__bg {
@@ -61,7 +61,6 @@ body {
   overflow: visible;
   overflow-x: hidden;
   &__page {
-    display: block;
     margin: auto;
     max-width: $max-width;
   }

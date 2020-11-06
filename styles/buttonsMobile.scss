@@ -4,50 +4,21 @@
   font-family: $font-myriad-cond-family;
   font-size: 21px;
   font-weight: 700;
-  position: fixed;
   right: 0;
 
   &-open {
     cursor: pointer;
   }
 
-  &.language {
-    top: 100px;
-  }
-
-  &.apply {
-    top: 192px;
-  }
-
-  &.contact {
-    top: 272px;
-  }
-
-  &.main {
-    top: 352px;
-  }
-
   &-bg {
-    width: 38px;
-    //max-height: 83px;
     z-index: 999;
     border: 1px solid white;
     float: right;
-
-    &.apply {
-      border-top: 0;
-      max-height: 73px;
-    }
-    &.contact {
-      border-top: 0;
-      max-height: 85px;
-    }
   }
 
   &-block {
     padding: 9px 6px;
     height: 83px;
-    //display: inline-block;
     margin: auto;
     background-color: #ff4100;
     color: #fff;
@@ -56,34 +27,15 @@
     box-sizing: border-box;
     writing-mode: tb-rl;
     transform: rotate(-180deg);
-    &.apply {
-      height: 73px;
-    }
-    &.contact {
-      height: 85px;
-    }
   }
   &-bg2 {
-    width: 38px;
-    //max-height: 83px;
     z-index: 999;
     border: 1px solid red;
     float: right;
-
-    &.apply {
-      border-top: 0;
-      max-height: 73px;
-    }
-    &.contact {
-      border-top: 0;
-      max-height: 85px;
-    }
   }
 
   &-block2 {
     padding: 9px 6px;
-    height: 83px;
-    //display: inline-block;
     margin: auto;
     background-color: white;
     color: red;
@@ -92,12 +44,6 @@
     box-sizing: border-box;
     writing-mode: tb-rl;
     transform: rotate(-180deg);
-    &.apply {
-      height: 73px;
-    }
-    &.contact {
-      height: 85px;
-    }
   }
 
   a {

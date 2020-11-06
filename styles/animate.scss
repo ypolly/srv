@@ -2,10 +2,6 @@
   display: none !important;
 }
 
-// #bottomMarker {
-//   display: none;
-// }
-// .first,
 .slide-out-button {
   animation-fill-mode: forwards;
   animation-name: slide-out-button;
@@ -52,38 +48,6 @@
   transform: translateX(50%) !important;
   transition: 0.3s linear;
 }
-
-// .slide-out {
-//   animation-fill-mode: forwards;
-//   animation-name: slide-out;
-//   animation-duration: 0.3s;
-//   animation-timing-function: linear;
-// }
-
-// @keyframes slide-out {
-//   0% {
-//     transform: translateX(50%);
-//   }
-//   100% {
-//     transform: translateX(-50%);
-//   }
-// }
-
-// .slide-in {
-//   animation-fill-mode: backwards;
-//   animation-name: slide-in;
-//   animation-duration: 0.3s;
-//   animation-timing-function: linear;
-// }
-
-// @keyframes slide-in {
-//   0% {
-//     transform: translateX(-50%);
-//   }
-//   100% {
-//     transform: translateX(50%);
-//   }
-// }
 
 .slide-out-border {
   animation-name: slide-out-border;

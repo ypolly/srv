@@ -1,13 +1,8 @@
 import Borders from "./Borders";
-import Shield from "../public/images/shield.svg";
-import { useEffect, useState } from "react";
-import SwedishContact from "./SwedishContact";
-import EnglishContact from "./EnglishContact";
+import ContactText from "./ContactText";
+import { isDesktop } from "../pages/media";
 
-export default function ContactForm({ animate, open, onChange, lang }) {
-  const onClose = () => {
-    onChange(false);
-  };
+export default function ContactForm({ animate, open }) {
   return (
     <div
       id="sr__apply"
@@ -27,8 +22,8 @@ export default function ContactForm({ animate, open, onChange, lang }) {
             className="form__header-logo"
             type="image/svg+xml"
             data="./images/best-paid.svg"
-          ></object>
-          {lang === "en" ? <EnglishContact /> : <SwedishContact />}
+          />
+          <ContactText />
         </div>
       </Borders>
     </div>

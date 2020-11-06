@@ -18,18 +18,14 @@ $bg-color-white: #fff;
   min-height: 100vh;
   width: 100vw;
   max-width: $max-width;
-  //position: fixed;
   position: relative;
   padding: 0;
   bottom: 0;
-  // display: none;
-
   &-1 {
     top: $indent-1;
     left: $indent-1;
     right: $indent-1;
     bottom: $indent-1;
-    // position: fixed;
     margin: 8px;
     border: 1px solid $bg-color;
   }
@@ -40,7 +36,6 @@ $bg-color-white: #fff;
     left: $indent-2;
     right: $indent-2;
     bottom: $indent-2;
-    //position: fixed;
     margin: 6px;
     border: 1px solid $bg-color;
   }
