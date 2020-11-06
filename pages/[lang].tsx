@@ -29,6 +29,10 @@ export default function () {
     setActivePage(nextPage);
   };
 
+  function scrollToTop () {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
   return (
     <>
       <Metadata />
@@ -61,8 +65,14 @@ export default function () {
           </div>
         </div>
 
-        <div>
+        <div className="sideButtons">
           <SideButtons activePage={activePage} onPageClick={onPageClick} />
+        </div>
+
+        <div className="scrollButton">
+          <button onClick={scrollToTop}>
+            <img src="./images/topArrow.svg"/>
+          </button>
         </div>
 
         <Footer />

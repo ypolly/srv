@@ -2,7 +2,7 @@
   display: none !important;
 }
 
-.slide-out-button {
+/*.slide-out-button {
   animation-fill-mode: forwards;
   animation-name: slide-out-button;
   animation-duration: 0.3s;
@@ -11,10 +11,10 @@
 
 @keyframes slide-out-button {
   0% {
-    transform: translateX(-50%);
+    transform: translateX(-100%);
   }
   100% {
-    transform: translateX(-150%);
+    transform: translateX(0);
   }
 }
 
@@ -25,11 +25,6 @@
   animation-timing-function: linear;
 }
 
-.initial_tab {
-  left: 50%;
-  transform: translateX(50%);
-}
-
 @keyframes slide-in-button {
   0% {
     transform: translateX(-150%);
@@ -37,16 +32,36 @@
   100% {
     transform: translateX(-50%);
   }
+}*/
+
+.initial_tab {
+  left: 50%;
+  transform: translateX(50%);
+  visibility: hidden;
+}
+
+.slide-out-button {
+  transform: translateX(100%);
 }
 
 .slide-out {
   transform: translateX(-50%) !important;
-  transition: 0.3s linear;
+  visibility: visible !important;
 }
 
 .slide-in {
   transform: translateX(50%) !important;
-  transition: 0.3s linear;
+  visibility: hidden;
+}
+
+@media screen and (max-width: 522px) {
+  .slide-out {
+    transition: 0.3s linear;
+  }
+
+  .slide-in {
+    transition: 0.3s linear;
+  }
 }
 
 .slide-out-border {
