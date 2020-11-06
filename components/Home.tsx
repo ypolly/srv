@@ -4,6 +4,7 @@ import { useTranslations } from "../shared/translations";
 export const Home = () => {
   const translation = useTranslations();
 
+  //h-center ima left 50% i transform
   return (
     <div id="borderLayout" className="sr__border z-layer__border h-center">
       <div className="sr__border-1">

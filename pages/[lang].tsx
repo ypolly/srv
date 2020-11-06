@@ -14,7 +14,9 @@ enum PAGE {
   CONTACT,
   MAIN,
 }
-
+// test if isDesktop
+// if (!isDesktop) {
+// }
 export default function () {
   const [activePage, setActivePage] = useState(PAGE.MAIN);
   const [animate, setAnimate] = useState(false);

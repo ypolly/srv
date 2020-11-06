@@ -114,6 +114,7 @@ export default function ControlledOpenSelect({ animate, open, onChange }) {
     // scrollToTop();
   };
 
+  //h-center ima left 50% i transform
   return (
     <div
       id="sr__apply"
