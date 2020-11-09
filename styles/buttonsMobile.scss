@@ -15,12 +15,22 @@
     border: 1px solid white;
     float: right;
     transition: .3s ease-in-out;
+  }
 
-    &:nth-child(2) {
+  &-bg2 {
+    transition: .3s ease-in-out;
+  }
+
+  &:nth-child(2) {
+
+    .sr__button-bg, .sr__button-bg2 {
       transition-delay: .1s;
     }
+  }
 
-    &:nth-child(3) {
+  &:nth-child(3) {
+
+    .sr__button-bg, .sr__button-bg2 {
       transition-delay: .2s;
     }
   }
