@@ -6,6 +6,10 @@
   font-weight: 700;
   right: 0;
 
+  & > a {
+    pointer-events: auto;
+  }
+
   &-open {
     cursor: pointer;
   }

@@ -5,6 +5,7 @@ $z-index-base: 14;
 
 .z-layer__language {
   z-index: 1000 !important;
+  pointer-events: none !important;
 }
 
 .sr__header {
