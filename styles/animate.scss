@@ -40,8 +40,10 @@
   visibility: hidden;
 }
 
-.slide-out-button {
-  transform: translateX(100%);
+@media screen and (max-width: 522px) {
+  .slide-out-button {
+    transform: translateX(100%);
+  }
 }
 
 .slide-out {
