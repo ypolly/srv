@@ -18,4 +18,7 @@ module.exports = {
 
     return config;
   },
+  typescript: {
+    ignoreBuildErrors: true,
+  },
 };
